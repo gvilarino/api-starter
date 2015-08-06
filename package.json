@@ -1,0 +1,25 @@
+{
+  "name": "api-starter",
+  "version": "0.0.1",
+  "description": "Express-based simple REST API starter project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gvilarino/api-starter.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "starter",
+    "seed"
+  ],
+  "author": "gvilarino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gvilarino/api-starter/issues"
+  },
+  "homepage": "https://github.com/gvilarino/api-starter"
+}
