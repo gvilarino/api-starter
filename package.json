@@ -1,6 +1,6 @@
 {
   "name": "api-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Express-based simple REST API starter project",
   "main": "index.js",
   "scripts": {
