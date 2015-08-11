@@ -1,6 +1,6 @@
 {
   "allowEmailAliases": false,
-  "jwtSecret": "generate a secret token and paste it here"
+  "jwtSecret": "generate a secret token and paste it here",
   "mongoUrl": "mongodb://@localhost:27017/test",
   "port": 3000
 }
