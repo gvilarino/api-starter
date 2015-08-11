@@ -4,13 +4,13 @@ import bodyParser from 'body-parser'
 import debug from 'debug'
 import config from '../lib/config'
 
-let log = debug('api-starter:examples')
-let app = express()
+const log = debug('api-starter:examples')
+const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-let db = mongoskin.db(config.mongoUrl, { safe:true })
+const db = mongoskin.db(config.mongoUrl, { safe:true })
 
 app.param('collectionName', (req, res, next, collectionName) => {
   req.collection = db.collection(collectionName)
@@ -65,5 +65,5 @@ app.listen(port, (err) => {
   }
 
   log('Server listening at *:%s', port)
-  log('Run make test in a separate terminal to test out this server')
+  log('Run make test-example in a separate terminal to test out this server')
 })
