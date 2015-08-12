@@ -2,7 +2,7 @@ import express from 'express'
 import mongoskin from 'mongoskin'
 import bodyParser from 'body-parser'
 import debug from 'debug'
-import config from '../lib/config'
+import config from 'lib/config'
 
 const log = debug('api-starter:examples')
 const app = express()
