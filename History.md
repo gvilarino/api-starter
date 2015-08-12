@@ -1,4 +1,15 @@
 
+0.0.3 / 2015-08-12
+==================
+
+ * Adapt code for linter to pass
+ * Add basic restrict middleware
+ * remove unused code for lint to pass
+ * Update usage of module.exports to export default
+ * Refactor root index.js to use lib/boot
+ * Fix usage of relative path in import
+ * 'make test' => 'make test-example'
+
 0.0.2 / 2015-08-11
 ==================
 
