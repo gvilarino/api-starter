@@ -20,10 +20,11 @@ run: install
 	@echo "Starting API server..."
 	@NODE_PATH=. DEBUG=$(DEBUG) $(BABEL) index.js
 
-# Installs deps & runs example server
-example: install
-	@echo "Starting example API..."
-	@NODE_PATH=. DEBUG=$(DEBUG) $(BABEL) examples/index.js
+# Runs mocha on basic tests (must have main server running)
+test:
+	@echo "Starting tests..."
+	@NODE_PATH=. $(MOCHA) --compilers js:babel/register ./test/index.test.js
+	@echo "Done testing.\n"
 
 # Installs deps
 install:
@@ -37,10 +38,15 @@ lint:
 	@$(ESLINT) *.js lib
 	@echo "Done.\n"
 
-# Runs mocha on sample tests (must have example running)
+# Installs deps & runs example server
+example: install
+	@echo "Starting example API..."
+	@NODE_PATH=. DEBUG=$(DEBUG) $(BABEL) examples/index.js
+
+# Runs mocha on example tests (must have example running)
 test-example:
 	@echo "Starting tests..."
-	@$(MOCHA) --compilers js:babel/register ./test/example.test.js
+	@NODE_PATH=. $(MOCHA) --compilers js:babel/register ./test/example.test.js
 	@echo "Done testing.\n"
 
 # Cleans deps
