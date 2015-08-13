@@ -1,3 +1,5 @@
+'use strict'
+
 import debug from 'debug'
 import app from 'lib/boot'
 
