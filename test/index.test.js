@@ -1,4 +1,4 @@
-import superagent from 'superagent'
+import request from 'superagent'
 import expect from 'expect'
 import semver from 'semver-regex'
 import pack from 'package'
@@ -6,7 +6,7 @@ import pack from 'package'
 describe('api-starter rest server', () => {
 
   it('retrieves api version', (done) => {
-    superagent.get('http://localhost:3000/')
+    request.get('http://localhost:3000/v1')
       .end((err, res) => {
         expect(err).toBe(null)
         expect(typeof res.body).toBe('object')
@@ -15,17 +15,27 @@ describe('api-starter rest server', () => {
         expect(res.body.port).toBe(3000)
         expect(typeof res.body.version).toBe('string')
         expect(semver().test(res.body.version)).toBe(true)
-        expect(res.body.apiUrl).toBe('/api')
+        expect(res.body.apiUrl).toBe('/v1')
         done()
     })
   })
 
   it('fails auth', (done) => {
-    superagent.get('http://localhost:3000/foo')
+    request.get('http://localhost:3000/v2/foo')
       .end((err, res) => {
         expect(err).toNotBe(null)
         expect(res).toNotBe(null)
         expect(res.statusCode).toBe(401)
+        done()
+      })
+  })
+
+  it('manages invalid api path', (done) => {
+    request.get('http://localhost:3000/foo')
+      .end((err, res) => {
+        expect(err).toNotBe(null)
+        expect(res).toNotBe(null)
+        expect(res.statusCode).toBe(404)
         done()
       })
   })
