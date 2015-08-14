@@ -1,4 +1,11 @@
 
+0.1.0 / 2015-08-14
+==================
+
+ * Add support for api versioning. Closes #6
+ * Add tests for default implementation
+ * Enable strict mode
+
 0.0.3 / 2015-08-12
 ==================
 
