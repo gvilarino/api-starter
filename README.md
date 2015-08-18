@@ -1,3 +1,5 @@
+![Dependencies](https://david-dm.org/gvilarino/api-starter.svg)
+
 # api-starter
 
 Express-based simple REST API starter project, with ES6 support
